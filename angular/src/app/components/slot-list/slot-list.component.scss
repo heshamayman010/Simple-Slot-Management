@@ -1,0 +1,303 @@
+/* Variables Scope */
+$slate-dark: #1e293b;
+$slate-light: #64748b;
+$border-color: #e2e8f0;
+$available-green: #22c55e;
+$booked-red: #ef4444;
+
+.slots-container {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 0 1rem;
+
+  .custom-slot-card {
+    border: 1px solid $border-color;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    background-color: #ffffff;
+
+    /* Slate Grey Header Update */
+    .slate-header {
+      background: linear-gradient(135deg, #334155 0%, $slate-dark 100%);
+      color: #ffffff;
+      padding: 1.25rem 1.5rem;
+      border-bottom: 1px solid #475569;
+      
+      h5 {
+        font-weight: 700;
+        letter-spacing: -0.01em;
+      }
+    }
+  }
+
+  /* Form and Input Group Alignments */
+  .filter-row {
+    background-color: #f8fafc;
+    padding: 1.25rem;
+    border-radius: 8px;
+    border: 1px solid $border-color;
+
+    .input-group-text {
+      background-color: #ffffff;
+      color: $slate-light;
+      border-color: #cbd5e1;
+    }
+
+    .form-control, .form-select {
+      border-color: #cbd5e1;
+      color: #0f172a;
+      
+      &:focus {
+        border-color: #3b82f6;
+        box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+      }
+    }
+  }
+
+  /* Spinner Accent */
+  .spinner-border.text-slate {
+    color: #475569;
+  }
+
+  /* Table Custom Layout Architecture */
+  .custom-table-wrapper {
+    border: 1px solid $border-color;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .custom-slotted-table {
+    margin-bottom: 0;
+
+    thead {
+      background-color: #f1f5f9;
+      
+      th {
+        color: #475569;
+        font-weight: 700;
+        font-size: 0.88rem;
+        text-transform: uppercase;
+        letter-spacing: 0.03em;
+        padding: 1rem;
+        border-bottom: 2px solid $border-color;
+      }
+    }
+
+    tbody {
+      tr {
+        transition: background-color 0.15s ease;
+
+        &:hover {
+          background-color: #f8fafc;
+        }
+
+        &.row-booked {
+          background-color: #fff1f2;
+          opacity: 0.75;
+          
+          &:hover {
+            background-color: #ffe4e6;
+          }
+        }
+      }
+
+      td {
+        padding: 1rem;
+        font-size: 0.95rem;
+        color: #334155;
+        border-bottom: 1px solid $border-color;
+      }
+    }
+
+    .start-time-cell {
+      color: #0f172a;
+    }
+
+    /* Status and Pills Typography */
+    .timezone-pill {
+      background-color: #e2e8f0 !important;
+      color: #475569;
+      font-weight: 600;
+      padding: 0.4rem 0.6rem;
+      border-radius: 6px;
+    }
+
+    .status-pill {
+      padding: 0.5rem 0.75rem;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 0.82rem;
+
+      &.status-available {
+        background-color: #dcfce7 !important;
+        color: #15803d;
+      }
+
+      &.status-booked {
+        background-color: #fee2e2 !important;
+        color: #b91c1c;
+      }
+    }
+
+    /* Action Buttons Design Space */
+    .action-book-btn {
+      padding: 0.4rem 1rem;
+      font-size: 0.88rem;
+      font-weight: 600;
+      border-radius: 6px;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      transition: all 0.2s ease;
+    }
+
+    .btn-primary-action {
+      background-color: #3b82f6;
+      color: #ffffff;
+      border: 1px solid transparent;
+
+      &:hover {
+        background-color: #2563eb;
+        transform: translateY(-1px);
+      }
+    }
+
+    .btn-disabled-action {
+      background-color: #cbd5e1;
+      color: #64748b;
+      border: 1px solid transparent;
+      cursor: not-allowed;
+    }
+  }
+
+  .table-counter-footer {
+    font-weight: 500;
+    padding-left: 0.25rem;
+  }
+
+  /* Custom Status Components Alert UI overrides */
+  .alert-custom-danger {
+    background-color: #fef2f2;
+    border: 1px solid #fca5a5;
+    color: #991b1b;
+    border-radius: 8px;
+    padding: 1rem;
+  }
+
+  .alert-custom-info {
+    background-color: #ffffff;
+    border: 1px dashed #cbd5e1;
+    border-radius: 12px;
+    padding: 3rem 2rem;
+
+    .empty-icon {
+      font-size: 2.5rem;
+      color: $slate-light;
+      margin-bottom: 1rem;
+    }
+
+    h6 {
+      font-weight: 700;
+      color: $slate-dark;
+      font-size: 1.15rem;
+    }
+  }
+
+  .btn-slate-action {
+    background-color: #475569;
+    color: #ffffff;
+    padding: 0.6rem 1.25rem;
+    font-weight: 600;
+    border-radius: 6px;
+    transition: background-color 0.2s;
+
+    &:hover {
+      background-color: $slate-dark;
+      color: #ffffff;
+    }
+  }
+}
+
+
+
+// for the confirmation modal 
+
+/* Simple Modal Styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.modal-box {
+  background: white;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.modal-header {
+  padding: 16px 20px;
+  border-bottom: 1px solid #e0e0e0;
+  
+  h4 {
+    margin: 0;
+    color: #333;
+  }
+}
+
+.modal-body {
+  padding: 20px;
+  
+  p {
+    margin: 0;
+    color: #555;
+  }
+}
+
+.modal-footer {
+  padding: 16px 20px;
+  border-top: 1px solid #e0e0e0;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.btn-cancel {
+  padding: 8px 20px;
+  background: #e0e0e0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  
+  &:hover {
+    background: #ccc;
+  }
+}
+
+.btn-confirm {
+  padding: 8px 20px;
+  background: #007bff;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  cursor: pointer;
+  
+  &:hover:not(:disabled) {
+    background: #0056b3;
+  }
+  
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+}

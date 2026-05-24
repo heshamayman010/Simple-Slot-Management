@@ -1,0 +1,146 @@
+
+<div class="slots-container mt-1">
+  <div class="card custom-slot-card">
+    <div class="card-header slate-header">
+      <h5 class="mb-0">
+        <i class="fas fa-calendar-alt me-2"></i>Next Available Slots
+      </h5>
+    </div>
+    
+    <div class="card-body">
+      <div class="row filter-row mb-4">
+        <div class="col-md-4 mb-3 mb-md-0">
+          <label class="form-label fw-bold">Count of Slots</label>
+          <div class="input-group">
+            <span class="input-group-text"><i class="fas fa-list-ol"></i></span>
+            <input 
+              type="number" 
+              class="form-control" 
+              [(ngModel)]="CountOfSlots" 
+              (change)="onFilterChange()" 
+              min="1" 
+              max="100"
+              placeholder="e.g. 10"
+            />
+          </div>
+          <small class="text-muted"> number of records to retrieve</small>
+        </div>
+
+        <div class="col-md-8">
+          <label class="form-label fw-bold">View in Time Zone</label>
+          <div class="input-group">
+            <span class="input-group-text"><i class="fas fa-globe"></i></span>
+            <select class="form-select" [(ngModel)]="selectedTimeZone" (change)="onTimeZoneChange()">
+              @for (tz of timeZones; track tz) {
+                <option [value]="tz">{{ tz }}</option>
+              }
+            </select>
+          </div>
+          <small class="text-muted">Slot times will be converted to this time zone</small>
+        </div>
+      </div>
+
+      @if (isLoading) {
+        <div class="text-center py-5 loading-spinner-box">
+          <div class="spinner-border text-slate" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+          <p class="mt-2 text-muted fw-semibold">Loading available slots...</p>
+        </div>
+      }
+
+      @if (errorMessage) {
+        <div class="alert alert-custom-danger">
+          <i class="fas fa-exclamation-circle me-2"></i>{{ errorMessage }}
+        </div>
+      }
+
+      @if (!isLoading && slots.length > 0) {
+        <div class="table-responsive custom-table-wrapper">
+          <table class="table custom-slotted-table align-middle">
+            <thead>
+              <tr>
+                <th>Local Start Time</th>
+                <th>Local End Time</th>
+                <th>Time Zone</th>
+                <th>Status</th>
+                <th class="text-center">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              @for (slot of slots; track slot.id) {
+                <tr [class.row-booked]="!slot.isBookable">
+                  <td class="start-time-cell">
+                    <i class="far fa-clock text-muted me-2"></i><strong>{{ slot.localStartTime }}</strong>
+                  </td>
+                  <td>{{ slot.localEndTime }}</td>
+                  <td><span class="badge timezone-pill">{{ slot.timeZone }}</span></td>
+                  <td>
+                    <span class="badge status-pill" [class.status-available]="slot.isBookable" [class.status-booked]="!slot.isBookable">
+                      @if (slot.isBookable) {
+                        <span>✅ Available</span>
+                      } @else {
+                        <span>Already Booked</span>
+                      }
+                    </span>
+                  </td>
+                <td class="text-center">
+                  <button 
+                    class="btn btn-sm action-book-btn" 
+                    [class.btn-primary-action]="slot.isBookable"
+                    [class.btn-disabled-action]="!slot.isBookable"
+                    (click)="openConfirmModal(slot.id)" 
+                    [disabled]="!slot.isBookable">
+                    <i class="fas" [class.fa-check-square]="slot.isBookable" [class.fa-ban]="!slot.isBookable"></i>
+                    Book
+                  </button>
+                </td>
+                </tr>
+              }
+            </tbody>
+          </table>
+        </div>
+      }
+
+      @if (!isLoading && slots.length === 0) {
+        <div class="text-center py-5 empty-state-wrapper">
+          <div class="alert alert-custom-info">
+            <div class="empty-icon"><i class="fas fa-calendar-times"></i></div>
+            <h6>No available slots found</h6>
+            <p class="mb-0 text-muted">Go to the Add Slots page to create some slots first!</p>
+            <a routerLink="/add-slots" class="btn btn-slate-action mt-3">
+              <i class="fas fa-plus-circle me-1"></i>Generate Slots
+            </a>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</div>
+
+
+
+<!-- modal for the confrimation of the booking  -->
+
+@if (showConfirmModal) {
+  <div class="modal-overlay">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h4>Confirm Booking</h4>
+      </div>
+      <div class="modal-body">
+        <p>Are you sure you want to book this slot?</p>
+      </div>
+      <div class="modal-footer">
+        <button class="btn-cancel" (click)="closeModal()">Cancel</button>
+        <button class="btn-confirm" [disabled]="isBooking" (click)="confirmBooking()">
+          @if (isBooking) {
+            <span>Booking...</span>
+          } @else {
+            <span>OK</span>
+          }
+        </button>
+      </div>
+    </div>
+  </div>
+}

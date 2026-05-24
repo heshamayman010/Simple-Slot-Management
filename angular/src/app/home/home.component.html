@@ -1,0 +1,75 @@
+<div class="home-container">
+  <div class="hero-section text-center">
+    <div class="container">
+      <div class="hero-icon-wrapper">
+        <i class="fas fa-calendar-check"></i>
+      </div>
+      <h1 class="hero-title">Welcome to Slot Management System</h1>
+      <p class="hero-subtitle">Simple time slot management for modern booking systems</p>
+      <div class="hero-action-group">
+        <a routerLink="/add-slots" class="action-btn btn-primary-style">
+          <i class="fas fa-plus-circle"></i> Generate Slots
+        </a>
+        <a routerLink="/slots-list" class="action-btn btn-secondary-style">
+          <i class="fas fa-list"></i> View Available Slots
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="container content-wrapper">
+    
+    <div class="row features-split">
+      <div class="col-md-6 mb-4">
+        <div class="feature-box feature-generate">
+          <div class="feature-icon icon-blue">
+            <i class="fas fa-plus-circle"></i>
+          </div>
+          <div class="feature-content">
+            <h4>Generate Slots</h4>
+            <p>Configure start date, end date, time zone, and slot duration to automatically generate time slots for booking.</p>
+            <ul class="feature-bullet-list">
+              <li><i class="fas fa-check-circle"></i> Full day coverage (00:00 to 23:59)</li>
+              <li><i class="fas fa-check-circle"></i> Flexible slot durations (15, 30, 60 minutes, etc.)</li>
+              <li><i class="fas fa-check-circle"></i> Multiple time zone support</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 mb-4">
+        <div class="feature-box feature-view">
+          <div class="feature-icon icon-green">
+            <i class="fas fa-calendar-alt"></i>
+          </div>
+          <div class="feature-content">
+            <h4>View Available Slots</h4>
+            <p>Browse next available slots and view them in your local time zone.</p>
+            <ul class="feature-bullet-list">
+              <li><i class="fas fa-check-circle"></i> Real-time availability</li>
+              <li><i class="fas fa-check-circle"></i> Time zone conversion using NodaTime</li>
+              <li><i class="fas fa-check-circle"></i> Simple booking simulation</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tech-section-wrapper text-center">
+      <h3 class="tech-title">Built With Modern Technologies</h3>
+      <div class="badge-flex-group">
+        <span class="tech-pill badge-angular">Angular 21</span>
+        <span class="tech-pill badge-dotnet">.NET 10.0</span>
+        <span class="tech-pill badge-nodatime">NodaTime</span>
+        <span class="tech-pill badge-abp">ABP Framework</span>
+      </div>
+    </div>
+
+    <footer class="footer-note-block text-center">
+      <hr class="footer-divider">
+      <p class="footer-text">
+        <i class="fas fa-clock text-primary"></i> All times are converted to your selected time zone using NodaTime
+      </p>
+    </footer>
+  </div>
+</div>

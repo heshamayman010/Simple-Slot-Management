@@ -1,0 +1,35 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/Vosita.Application.Contracts/Vosita.Application.Contracts.csproj" />
+    <Project Path="src/Vosita.Application/Vosita.Application.csproj" />
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <Project Path="src/Vosita.DbMigrator/Vosita.DbMigrator.csproj" />
+    <Project Path="src/Vosita.Domain.Shared/Vosita.Domain.Shared.csproj" />
+    <Project Path="src/Vosita.Domain/Vosita.Domain.csproj" />
+    <Project Path="src/Vosita.EntityFrameworkCore/Vosita.EntityFrameworkCore.csproj" />
+    <Project Path="src/Vosita.HttpApi.Client/Vosita.HttpApi.Client.csproj" />
+    
+    <Project Path="src/Vosita.HttpApi.Host/Vosita.HttpApi.Host.csproj" />
+    <Project Path="src/Vosita.HttpApi/Vosita.HttpApi.csproj" />
+    
+    
+    
+  </Folder>
+  <Folder Name="/test/">
+    <Project Path="test/Vosita.Application.Tests/Vosita.Application.Tests.csproj" />
+    <Project Path="test/Vosita.Domain.Tests/Vosita.Domain.Tests.csproj" />
+    <Project Path="test/Vosita.EntityFrameworkCore.Tests/Vosita.EntityFrameworkCore.Tests.csproj" />
+    <Project Path="test/Vosita.HttpApi.Client.ConsoleTestApp/Vosita.HttpApi.Client.ConsoleTestApp.csproj" />
+    
+    <Project Path="test/Vosita.TestBase/Vosita.TestBase.csproj" />
+    
+  </Folder>
+</Solution>

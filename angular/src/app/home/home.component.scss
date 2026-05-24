@@ -1,0 +1,248 @@
+/* Layout Constants & Structural Flow */
+.home-container {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: #48566a;
+  background-color: #f8fafc;
+  min-height: 100vh;
+}
+
+.content-wrapper {
+  max-width: 1040px;
+  padding-bottom: 4rem;
+}
+
+.hero-section {
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  color: #ffffff;
+  padding: 4.5rem 1rem 4rem 1rem;
+  margin-bottom: 3.5rem;
+  border-bottom: 1px solid #0b121a;
+}
+
+.hero-icon-wrapper {
+  font-size: 3rem;
+  color: #3b82f6;
+  margin-bottom: 1rem;
+  display: inline-block;
+  animation: pulse 2s infinite ease-in-out;
+}
+
+.hero-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  margin-bottom: 0.75rem;
+}
+
+.hero-subtitle {
+  font-size: 1.15rem;
+  color: #94a3b8;
+  max-width: 600px;
+  margin: 0 auto 2rem auto;
+  font-weight: 400;
+}
+
+/* Button UI Action Configurations */
+.hero-action-group {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.action-btn {
+  padding: 0.75rem 1.75rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.btn-primary-style {
+  background-color: #3b82f6;
+  color: #ffffff;
+  border: 1px solid transparent;
+  box-shadow: 0 4px 6px -1px rgba(59, 130, 246, 0.3);
+}
+
+.btn-primary-style:hover {
+  background-color: #2563eb;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px -2px rgba(59, 130, 246, 0.4);
+}
+
+.btn-secondary-style {
+  background-color: rgba(255, 255, 255, 0.05);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.btn-secondary-style:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  border-color: #ffffff;
+  transform: translateY(-2px);
+}
+
+/* Feature Split Layout with Animated Hover Interactions */
+.features-split {
+  margin-top: 1rem;
+  margin-bottom: 4rem;
+}
+
+.feature-box {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 2.5rem 2rem;
+  display: flex;
+  gap: 1.5rem;
+  height: 100%;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02), 0 2px 4px -1px rgba(0, 0, 0, 0.01);
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), 
+              box-shadow 0.3s ease, 
+              border-color 0.3s ease;
+}
+
+/* Hover Physics */
+.feature-box:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.06), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.feature-generate:hover {
+  border-color: #bae6fd; /* Subtle blue outline hint */
+  background: linear-gradient(to bottom right, #ffffff, #f0f9ff);
+}
+
+.feature-view:hover {
+  border-color: #bbf7d0; /* Subtle green outline hint */
+  background: linear-gradient(to bottom right, #ffffff, #f0fdf4);
+}
+
+/* Custom Icon Color Spaces */
+.feature-icon {
+  font-size: 1.75rem;
+  margin-top: 0.15rem;
+  transition: transform 0.3s ease;
+}
+
+.feature-box:hover .feature-icon {
+  transform: scale(1.15) rotate(5deg);
+}
+
+.icon-blue { color: #3b82f6; }
+.icon-green { color: #22c55e; }
+
+.feature-content h4 {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 0.75rem;
+}
+
+.feature-content p {
+  font-size: 0.98rem;
+  color: #64748b;
+  line-height: 1.5;
+  margin-bottom: 1.25rem;
+}
+
+.feature-bullet-list {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 0;
+}
+
+.feature-bullet-list li {
+  font-size: 0.92rem;
+  color: #475569;
+  margin-bottom: 0.65rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.feature-bullet-list li:last-child {
+  margin-bottom: 0;
+}
+
+.feature-bullet-list li i {
+  font-size: 0.95rem;
+  color: #cbd5e1;
+  transition: color 0.3s ease;
+}
+
+/* Make checks highlight green/blue on card hover */
+.feature-generate:hover .feature-bullet-list li i { color: #3b82f6; }
+.feature-view:hover .feature-bullet-list li i { color: #22c55e; }
+
+/* Tech Stack Pill Framework Badges */
+.tech-section-wrapper {
+  background-color: #f1f5f9;
+  border-radius: 12px;
+  padding: 2rem 1.5rem;
+  border: 1px solid #e2e8f0;
+}
+
+.tech-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #475569;
+  margin-bottom: 1.25rem;
+}
+
+.badge-flex-group {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.tech-pill {
+  padding: 0.5rem 1.25rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-radius: 50px;
+  background: #ffffff;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+  border: 1px solid #cbd5e1;
+}
+
+.badge-angular { color: #dd0031; border-color: #fecaca; }
+.badge-dotnet { color: #512bd4; border-color: #e0d7ff; }
+.badge-nodatime { color: #0284c7; border-color: #bae6fd; }
+.badge-abp { color: #10b981; border-color: #a7f3d0; }
+
+/* Global Workspace Footer Styles */
+.footer-note-block {
+  margin-top: 4rem;
+}
+
+.footer-divider {
+  border-color: #e2e8f0;
+  margin-bottom: 1.5rem;
+}
+
+.footer-text {
+  font-size: 0.95rem;
+  color: #64748b;
+  margin-bottom: 0.5rem;
+}
+
+.copyright-small {
+  font-size: 0.85rem;
+  color: #94a3b8;
+}
+
+/* Pulsing Keyframe for Hero Graphic */
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 0.95; }
+  50% { transform: scale(1.05); opacity: 1; }
+  100% { transform: scale(1); opacity: 0.95; }
+}

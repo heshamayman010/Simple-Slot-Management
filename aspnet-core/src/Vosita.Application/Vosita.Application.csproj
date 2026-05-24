@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\common.props" />
+
+  <PropertyGroup>
+  <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <RootNamespace>Vosita</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Vosita.Domain\Vosita.Domain.csproj" />
+    <ProjectReference Include="..\Vosita.Application.Contracts\Vosita.Application.Contracts.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    
+    <PackageReference Include="NodaTime" Version="3.3.2" />
+    <PackageReference Include="Volo.Abp.Account.Application" Version="10.4.0" />
+    <PackageReference Include="Volo.Abp.Identity.Application" Version="10.4.0" />
+    <PackageReference Include="Volo.Abp.PermissionManagement.Application" Version="10.4.0" />
+    <PackageReference Include="Volo.Abp.TenantManagement.Application" Version="10.4.0" />
+    <PackageReference Include="Volo.Abp.FeatureManagement.Application" Version="10.4.0" />
+    <PackageReference Include="Volo.Abp.SettingManagement.Application" Version="10.4.0" />
+  </ItemGroup>
+
+</Project>

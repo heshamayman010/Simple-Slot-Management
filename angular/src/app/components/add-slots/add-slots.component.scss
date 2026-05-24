@@ -1,0 +1,112 @@
+$slate-dark: #1e293b;
+$slate-light: #64748b;
+$border-color: #e2e8f0;
+
+.slots-container {
+  max-width: 720px; 
+  margin: 0 auto;
+  padding: 0 1rem;
+
+  .custom-slot-card {
+    border: 1px solid $border-color;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    background-color: #ffffff;
+
+    .slate-header {
+      background: linear-gradient(135deg, #334155 0%, $slate-dark 100%);
+      color: #ffffff;
+      padding: 1.25rem 1.5rem;
+      border-bottom: 1px solid #475569;
+      
+      h5 {
+        font-weight: 700;
+        letter-spacing: -0.01em;
+      }
+    }
+  }
+
+  .input-group-text {
+    background-color: #f8fafc;
+    color: $slate-light;
+    border-color: #cbd5e1;
+    min-width: 46px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .form-control, .form-select {
+    border-color: #cbd5e1;
+    color: #0f172a;
+    padding: 0.5rem 0.75rem;
+    
+    &:focus {
+      border-color: #3b82f6;
+      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+    }
+
+    &.is-invalid {
+      border-color: #ef4444;
+      
+      &:focus {
+        box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.15);
+      }
+    }
+  }
+
+  .form-label {
+    color: #334155;
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .text-muted {
+    font-size: 0.82rem;
+    color: $slate-light !important;
+    display: inline-block;
+    margin-top: 0.35rem;
+  }
+
+  .btn-slate-action {
+    background: linear-gradient(135deg, #475569 0%, $slate-dark 100%);
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 1rem;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px -1px rgba(30, 41, 59, 0.2);
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+
+    &:hover:not([disabled]) {
+      background: linear-gradient(135deg, $slate-dark 0%, #0f172a 100%);
+      transform: translateY(-1px);
+      box-shadow: 0 6px 12px -2px rgba(30, 41, 59, 0.3);
+    }
+
+    &:disabled {
+      background: #cbd5e1;
+      color: #94a3b8;
+      box-shadow: none;
+      cursor: not-allowed;
+    }
+  }
+
+  .alert-custom-success {
+    background-color: #dcfce7;
+    border: 1px solid #a7f3d0;
+    color: #14532d;
+    border-radius: 8px;
+    padding: 1rem;
+    font-weight: 500;
+  }
+
+  .alert-custom-danger {
+    background-color: #fef2f2;
+    border: 1px solid #fca5a5;
+    color: #991b1b;
+    border-radius: 8px;
+    padding: 1rem;
+    font-weight: 500;
+  }
+}
