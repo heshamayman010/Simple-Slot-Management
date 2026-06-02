@@ -39,8 +39,12 @@ cd aspnet-core
 
 2. Update the connection string 
 
-3. Restore packages and update database:
+3. Restore packages and update database and Install client-side UI libraries used by the framework:
 ```bash
+abp install-libs
+dotnet run --project src/Vosita.DbMigrator
+
+or run :
 dotnet restore
 dotnet ef database update -p src/Vosita.EntityFrameworkCore
 ```
@@ -117,6 +121,11 @@ To add a new migration:
 
 cd aspnet-core
 dotnet ef migrations add "MigrationName" --project src/Vosita.EntityFrameworkCore --startup-project src/Vosita.DbMigrator
+
+# to  Apply changes and re-run seed data via the Migrator
+dotnet run --project src/Vosita.DbMigrator
+
+or run :
 dotnet ef database update --project src/Vosita.EntityFrameworkCore --startup-project src/Vosita.DbMigrator
 ```
 ## Assumptions Made
