@@ -75,6 +75,7 @@ cd angular
 2. Install dependencies:
 ```bash
 npm install
+npm install @swimlane/ngx-datatable
 ```
 
 3. Run the application:
