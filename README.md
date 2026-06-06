@@ -42,10 +42,10 @@ cd aspnet-core
 3. Restore packages and update database and Install client-side UI libraries used by the framework:
 ```bash
 abp install-libs
-dotnet run --project src/Vosita.DbMigrator
-
-or run :
 dotnet restore
+
+dotnet run --project src/Vosita.DbMigrator
+or run :
 dotnet ef database update -p src/Vosita.EntityFrameworkCore
 ```
 
