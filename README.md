@@ -43,8 +43,8 @@ cd aspnet-core
 ```bash
 abp install-libs
 dotnet restore
-
-dotnet run --project src/Vosita.DbMigrator
+cd .\src\Vosita.DbMigrator\
+dotnet run 
 or run :
 dotnet ef database update -p src/Vosita.EntityFrameworkCore
 ```
